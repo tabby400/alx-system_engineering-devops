@@ -3,7 +3,7 @@
 /**
  * check_cycle - function that checks if a singly linked
  *                list has a cycle in it
- * @list: the singly linked list to be looked at
+ * @list: the singly linked list to be looked at.
  *
  * Return: 0 if there is no cycle otherwise 1 if it exists
  */

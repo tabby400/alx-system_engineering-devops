@@ -7,7 +7,7 @@ if __name__ == "__main__":
     total = len(sys.argv) - 1  # not including script name
 
     if total == 1:
-        print("1 arguement:")
+        print("1 arguement.")
     elif total == 0:
         print("0 arguments.")
     else:

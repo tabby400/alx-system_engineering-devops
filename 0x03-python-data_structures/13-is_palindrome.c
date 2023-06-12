@@ -7,7 +7,7 @@ int is_palindrome(listint_t **head);
 /**
  * reverse_listint - function used to reverse a linked list
  *
- * @head: points to the first element in the list
+ * @head: points to the first element in the list.
  *
  * Return : points to the first node in the linked list
  */

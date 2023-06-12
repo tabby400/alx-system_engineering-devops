@@ -11,7 +11,7 @@ void print_python_list_info(PyObject *p)
 	int list_size;
 	int capacity;
         int x;
-	PyObject *list_obj;
+	PyObject *obj;
 
 	list_size = Py_SIZE(p); /* macro for size of python object*/
 	capacity = ((PyListObject *)p)->allocated; /*acess struct*/
@@ -23,7 +23,7 @@ void print_python_list_info(PyObject *p)
 	{
 		printf("Element %d: ", x);
 
-		list_obj = PyList_GetItem(p, x);
-		printf("%s\n", Py_TYPE(list_obj)->tp_name);
+		obj = PyList_GetItem(p, x);
+		printf("%s\n", Py_TYPE(obj)->tp_name);
 	}
 }

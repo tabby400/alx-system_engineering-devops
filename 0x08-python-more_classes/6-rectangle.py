@@ -72,7 +72,7 @@ class Rectangle:
         for f in range(self.__height):
             [shape.append('#') for p in range(self.__width)]
             if f != self.__height - 1:
-                rect.append("\n")
+                shape.append("\n")
         return ("".join(shape))
 
     def __repr__(self):

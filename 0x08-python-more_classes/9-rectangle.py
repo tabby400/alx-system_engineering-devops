@@ -68,7 +68,7 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         """returns rectangle whose area is greater.
 
-        Arguement:
+        Arguements:
             rect_1(rectangle): first rectangle.
             rect_2(rectangle): second rectangle.
         Raises:
@@ -83,12 +83,12 @@ class Rectangle:
 
         if rect_1.area() >= rect_2.area():
             return rect_1
-
+ 
         return rect_2
 
     @classmethod  # new rectangle instance
     def square(cls, size=0):
-        """used to return a new rectangle instance
+        """used to return a new rectangle instance width and height same
 
         Arguements:
             size(int): height and width of rectangle

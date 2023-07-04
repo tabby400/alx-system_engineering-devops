@@ -1,0 +1,82 @@
+0-add_integer.py
+================
+This is module with a function with the prototype def add_integer(a, b=98)  that is used to return the addition of a and b=98
+
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(5, 2)
+	7
+
+with a negative integer
+
+::
+
+	>>> add_integer(1, -2)
+	-1
+
+works with floating numbers casted to integers int()
+
+::
+
+	>>> add_integer(3.0, 0.2)
+	3
+
+::
+
+	>>> add_integer(-5.6, -4.1)
+	-9
+ 
+Works with non float and non float numbers
+::
+	>>> add_integer(3.3, -4)
+	-1
+
+By default the second arg b is 98
+
+::
+	>>> add_integer(3)
+	101
+
+TypeError is raised if one of the numbers is not a float or an int
+
+::
+	>>> add_integer("Witmark", 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(3, "Michieka")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+If nothing is provided
+::
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+if b is null
+::
+	>>> add_integer(4.3, None)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+
+	>>> add_integer("Witmark", "Nyamari")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+::
+
+	>>> add_integer(7, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer

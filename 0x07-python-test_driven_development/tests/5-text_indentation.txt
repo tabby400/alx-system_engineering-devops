@@ -1,0 +1,98 @@
+5-text_indentation.py
+======================
+This ile has the prototype def text_indentation(text): used to print a text with two lines after ., ? and :
+
+::
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Morning?")
+	Morning?
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("   Hello there.")
+	Hello there.
+	<BLANKLINE>
+
+
+::
+
+	   >>> text_indentation("          ")
+
+
+::
+
+	>>> text_indentation("Hey.   ")
+	Hey.
+	<BLANKLINE>
+
+::
+	
+	>>> text_indentation("    What you said.    Hurt me.   ")
+	What you said.
+	<BLANKLINE>
+	Hurt me.
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("wait for me")
+	wait for me
+
+when \n is used
+
+::
+	
+	>>> text_indentation("Therefore:\nRelax.")
+	Therefore:
+	<BLANKLINE>
+ 	<BLANKLINE>
+ 	Relax.
+ 	<BLANKLINE>
+
+::
+
+	>>> text_indentation("\n\n He is lost.")
+	<BLANKLINE>
+	<BLANKLINE>
+	He is lost.
+	<BLANKLINE>
+
+::
+
+	>>> text_indentation("Believe \n in yourself.")
+	Believe 
+	in yourself.
+	<BLANKLINE>
+
+::
+
+if text is not a srting TypeError is raised
+
+::
+
+	>>> text_indentation(4)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+
+::
+	
+
+	>>> text_indentation({"ten": 10, "seven": 7})
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+
+
+	
+
+
+

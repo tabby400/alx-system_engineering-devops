@@ -1,0 +1,67 @@
+4-print_square.py
+================
+
+This has the prototype def print_square(size) that is used to print a square with #
+
+::
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square(2)
+	##
+	##
+
+::
+
+	>>> print_square(5)
+	#####
+	#####
+	#####
+	#####
+	#####
+
+if 0 is passes nothing is printed
+
+::
+
+	>>> print_square(0)
+
+Size has to be an int otherwise raise TypeError
+
+::
+
+	>>> print_square(7.3)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square("seven")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+::
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+if the value is less than 0 raise ValueError
+::
+
+	>>> print_square(-3)	
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+::
+
+	>>> print_square(-2.9)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+No arg passed
+
+::
+
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'

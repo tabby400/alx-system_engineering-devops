@@ -1,0 +1,59 @@
+MyList class inheriting from list class
+========================================
+
+The class being imprted
+
+    >>> NewList = __import__('1-my_list').MyList
+
+
+Testing:
+
+    >>> Newlist = MyList()
+
+    >>> Newlist
+    []
+
+
+Adding to the lis t using append
+
+
+    >>> Newlist.append(7)
+
+    >>> Newlist.append(3)
+
+    >>> Newlist.append(1)
+
+    >>> Newlist
+    [7, 3, 1]
+
+    >>> Newlist.print_sorted()
+    [1, 3, 7]
+
+When called prints original without sorting
+
+
+    >>> Newlist
+    [7, 3, 1]
+
+    >>> Newlist = MyList([9, 5, 1])
+
+    >>> Newlist
+    [9, 5, 1]
+
+    >>> Newlist.print_sorted()
+    [1, 5, 9]
+
+If strings are passed
+
+    >>> Newlist = MyList("bye")
+    
+    >>> Newlist
+    ['b', 'y', 'e']
+
+    >>> Newlist.print_sorted()
+    ['b', 'e', 'y']
+
+    >>> otherlist = MyList()
+
+    >>> otherlist.print_sorted()
+    []

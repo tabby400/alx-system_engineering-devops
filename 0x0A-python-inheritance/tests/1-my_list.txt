@@ -3,7 +3,7 @@ MyList class inheriting from list class
 
 The class being imprted
 
-    >>> NewList = __import__('1-my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
 
 
 Testing:

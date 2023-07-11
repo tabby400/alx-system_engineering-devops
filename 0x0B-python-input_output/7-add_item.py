@@ -14,5 +14,5 @@ if __name__ == "__main__":
         elements = load_from_json_file("add_item.json")
     except FileNotFoundError:  # if file exists
         elements = []
-    elememts.extend(sys.argv[1:])  # cmd args got except script name
+    elements.extend(sys.argv[1:])  # cmd args got except script name
     save_to_json_file(elements, "add_item.json")

@@ -39,5 +39,5 @@ class Student:
             of dictionary
         """
 
-        for p, x in json.values():
+        for p, x in json.items():
             setattr(self, p, x)

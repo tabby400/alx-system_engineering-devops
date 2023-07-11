@@ -11,9 +11,7 @@ def pascal_triangle(n):
     """
 
     if n <= 0:  # if is empty
-        {
-            return []
-        }
+        return []
 
     tri_list = [[1]]
 

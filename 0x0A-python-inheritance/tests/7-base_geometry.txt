@@ -1,0 +1,72 @@
+BaseGeometry
+=============
+
+Import the class:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Testing it:
+
+    >>> basegeo = BaseGeometry()
+    
+    >>> basegeo.integer_validator("int value", 99)
+
+    >>> basegeo.integer_validator("width", 17)
+
+    >>> basegeo.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+
+No integer present in the two
+
+
+    >>> basegeo.integer_validator("ryt", "Korean")
+    Traceback (most recent call last):
+    TypeError: ryt must be an integer
+
+    >>> basegeo.integer_validator("height", 0)
+    Traceback (most recent call last):
+    ValueError: height must be greater than 0
+    
+    >>> basegeo.integer_validator("line", -14)
+    Traceback (most recent call last):
+    ValueError: line must be greater than 0
+
+    >>> basegeo.integer_validator("median")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> basegeo.integer_validator("mean", 4.2)
+    Traceback (most recent call last):
+    TypeError: mean must be an integer
+
+    >>> basegeo.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> basegeo.integer_validator("NaN", float('nan'))
+    Traceback (most recent call last):
+    TypeError: NaN must be an integer
+
+    >>> basegeo.integer_validator("Huge", 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+
+    >>> basegeo.integer_validator("count", (2,))
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> basegeo.integer_validator("count", [5])
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> basegeo.integer_validator("count", True)
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> basegeo.integer_validator("count", None)
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> basegeo.integer_validator("count", True)
+    Traceback (most recent call last):
+    TypeError: count must be an integer

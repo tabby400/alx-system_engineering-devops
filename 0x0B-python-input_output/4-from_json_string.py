@@ -7,6 +7,6 @@ import json
 
 
 def from_json_string(my_str):
-    """function used to decode the JSON string to python
+    """function that is used to decode the JSON string to python
     object."""
     return json.loads(my_str)  # from JSON to python object

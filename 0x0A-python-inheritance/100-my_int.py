@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """Definition of a derived MyInt class from base int
 class."""
 

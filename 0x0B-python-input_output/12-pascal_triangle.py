@@ -11,11 +11,14 @@ def pascal_triangle(n):
     """
 
     if n <= 0:  # if is empty
-        return []
+        {
+            return []
+        }
 
     tri_list = [[1]]
+
     while len(tri_list) != n:
-        cur_row = triangles[-1]
+        cur_row = tri_list[-1]
         new_rw = [1]
 
         for p in range(len(cur_row) - 1):

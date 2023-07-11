@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Explains more of a pascal triangle function."""
+"""Explains more on a pascal triangle function."""
 
 
 def pascal_triangle(n):

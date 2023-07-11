@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+
+"""Definition of a derived MyInt class from base int
+class."""
+
+
 class MyInt(int):
 
     """this is an  int class that changes the behaviour of

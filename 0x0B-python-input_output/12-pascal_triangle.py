@@ -10,13 +10,10 @@ def pascal_triangle(n):
     a list of lists representing triangle.
     """
 
-    if n <= 0:
-        {
-            return []
-        }
+    if n <= 0:  # if is empty
+        return []
 
     tri_list = [[1]]
-
     while len(tri_list) != n:
         cur_row = triangles[-1]
         new_rw = [1]

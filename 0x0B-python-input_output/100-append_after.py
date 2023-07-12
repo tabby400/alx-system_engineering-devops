@@ -10,7 +10,7 @@ def append_after(filename="", search_string="", new_string=""):
     Arguements:
         filename: nameof the file
         new_string(str): the string to be inserted
-        search_string: string to be searched for
+        search_string: the string to be searched for
     """
 
     txt = ""

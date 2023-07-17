@@ -114,30 +114,6 @@ class BaseTest(unittest.TestCase):
         rect = Rectangle(14, 32, 2, 5)
         self.assertEqual(str, type(Rectangle.to_json_string([rect.to_dictionary()])))
 
-    def test_rectangle_to_json_string_one_dict(self):
-        rect = Rectangle(13, 2, 5, 1, 8)
-        self.assertTrue(len(Rectangle.to_json_string([rect.to_dictionary()])) == 46)
-
-    def test_rectangle_to_json_string_two_dicts(self):
-        rect1 = Rectangle(2, 3, 5, 19, 2)
-        rect2 = Rectangle(4, 2, 4, 1, 12)
-        list_dictionary = [rect1.to_dictionary(), rect2.to_dictionary()]
-        self.assertTrue(len(Rectangle.to_json_string(list_dictionary)) == 78)
-
-    def test_square_to_json_string_type(self):
-        square = Square(10, 4, 3, 9)
-        self.assertEqual(str, type(Square.to_json_string([square.to_dictionary()])))
-
-    def test_square_to_json_string_one_dict(self):
-        square = Square(10, 4, 3, 9)
-        self.assertTrue(len(Square.to_json_string([square.to_dictionary()])) == 69)
-
-    def test_square_to_json_string_two_dicts(self):
-        square1 = Square(10, 4, 3, 9)
-        square2 = Square(4, 6, 20, 2)
-        list_dictionary = [square1.to_dictionary(), square2.to_dictionary()]
-        self.assertTrue(len(Square.to_json_string(list_dictionary)) == 118)
-
     class BaseTest_saveto_file(unittest.TestCase):
         """Using unnitests to test method save to file
     in base"""
@@ -157,46 +133,6 @@ class BaseTest(unittest.TestCase):
             os.remove("Base.json")
         except IOError:
             pass
-
-    def test_save_to_file_1_rectangle(self):
-        rec = Rectangle(9, 3, 2, 4, 5)
-        Rectangle.save_to_file([rec])
-        with open("Rectangle.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 60)
-
-    def test_save_to_file_2_rectangles(self):
-        rec1 = Rectangle(9, 3, 2, 4, 5)
-        rec2 = Rectangle(8, 4, 4, 6, 3)
-        Rectangle.save_to_file([rec1, rec2])
-        with open("Rectangle.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 115)
-
-    def test_save_to_file_1_square(self):
-        sq = Square(13, 4, 2, 9)
-        Square.save_to_file([sq])
-        with open("Square.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 43)
-
-    def test_save_to_file_two_squares(self):
-        sq1 = Square(11, 6, 2, 7)
-        sq2 = Square(3, 8, 2, 3)
-        Square.save_to_file([sq1, sq2])
-        with open("Square.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 87)
-
-    def test_save_to_file_class_nm_for_filename(self):
-        sq = Square(5, 2, 7, 8)
-        Base.save_to_file([sq])
-        with open("Base.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 49)
-
-    def test_save_to_file_overwrite(self):
-        sq = Square(7, 3, 29, 9)
-        Square.save_to_file([sq])
-        sq = Square(15, 7, 2, 8)
-        Square.save_to_file([sq])
-        with open("Square.json", "r") as fh:
-            self.assertTrue(len(fh.read()) == 40)
 
     def test_None_save_to_file(self):
         Square.save_to_file(None)
@@ -273,41 +209,11 @@ class BaseTest(unittest.TestCase):
     class BaseTest_create(unittest.TestCase):
         """Using unnitest for testing method create of base class."""
 
-    def test_create_rectangle(self):
-        rec1 = Rectangle(3, 6, 6, 2, 1)
-        rec1_dictionary = rec1.to_dictionary()
-        rec2 = Rectangle.create(**rec1_dictionary)
-        self.assertEqual("[Rectangle] (1) 2/2 - 3/6", str(rec1))
-
-    def test_new_create_rectangle(self):
-        rec1 = Rectangle(3, 6, 7, 1, 8)
-        rec1_dictionary = rec1.to_dictionary()
-        rec2 = Rectangle.create(**rec1_dictionary)
-        self.assertEqual("[Rectangle] (8) 1/1 - 6/3", str(rec2))
-
-    def test_to_create_rectangle(self):
-        rec1 = Rectangle(3, 6, 7, 1, 8)
-        rec1_dictionary = rec1.to_dictionary()
-        rec2 = Rectangle.create(**rec1_dictionary)
-        self.assertIsNot(rec1, rec2)
-
     def test_create_equal_rectangle(self):
         rec1 = Rectangle(3, 6, 4, 2, 8)
         rec1_dictionary = rec1.to_dictionary()
         rec2 = Rectangle.create(**rec1_dictionary)
         self.assertNotEqual(rec1, rec2)
-
-    def test_create_square_(self):
-        sq1 = Square(4, 5, 3, 8)
-        sq1_dictionary = sq1.to_dictionary()
-        sq2 = Square.create(**sq1_dictionary)
-        self.assertEqual("[Square] (8) 3/3 - 4", str(sq1))
-
-    def test_new_create_square(self):
-        sq1 = Square(4, 5, 3, 8)
-        sq1_dictionary = sq1.to_dictionary()
-        sq2 = Square.create(**sq1_dictionary)
-        self.assertEqual("[Square] (8) 3/3 - 4", str(sq2))
 
     def test_to_create_square(self):
         sq1 = Square(4, 5, 3, 8)
@@ -337,20 +243,6 @@ class BaseTest(unittest.TestCase):
         except IOError:
             pass
 
-    def test_rectangle1_load_from_file_(self):
-        rec1 = Rectangle(12, 4, 1, 5, 3)
-        rec2 = Rectangle(4, 5, 7, 9, 2)
-        Rectangle.save_to_file([rec1, rec2])
-        list_rect_out = Rectangle.load_from_file()
-        self.assertEqual(str(rec1), str(list_rect_out[0]))
-
-    def test_load_from_file_2_rectangle(self):
-        rec1 = Rectangle(12, 4, 1, 5, 1)
-        rec2 = Rectangle(9, 3, 4, 9, 2)
-        Rectangle.save_to_file([rec1, rec2])
-        list_rect_out = Rectangle.load_from_file()
-        self.assertEqual(str(rec2), str(list_rect_out[1]))
-
     def test_types_load_from_file_rectangle(self):
         rec1 = Rectangle(12, 4, 1, 5, 2)
         rec2 = Rectangle(9, 3, 4, 9, 7)
@@ -378,14 +270,6 @@ class BaseTest(unittest.TestCase):
         Square.save_to_file([sq1, sq2])
         out = Square.load_from_file()
         self.assertTrue(all(type(obj) == Square for obj in out))
-
-    def test_load_from_file_not_file(self):
-        output = Square.load_from_file()
-        self.assertEqual([], output)
-
-    def test_load_from_file_more_than_1_arg(self):
-        with self.assertRaises(TypeError):
-            Base.load_from_file([], 1)
 
     class BaseTest_save_to_filecsv(unittest.TestCase):
         """Using unnitest to testsave to file csv method

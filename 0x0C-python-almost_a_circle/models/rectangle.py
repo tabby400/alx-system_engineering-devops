@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-"""this is the definition of a 
+"""this is the definition of a
 rectangle class."""
 
 from models.base import Base  # using function in a module
+
 
 class Rectangle(Base):
     """is a representation of a rectangle."""
@@ -98,7 +99,7 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """Updating the rectangle, variable 
+        """Updating the rectangle, variable
         length ofarguements.
         Arguements:
             *args(int):the height,width x, y attibutes.
@@ -111,25 +112,25 @@ class Rectangle(Base):
         """
 
         if args and len(args) != 0:
-            l = 0
+            arg_ind = 0
             for arg in args:
-                if l == 0:
+                if arg_ind == 0:
                     if arg is None:
                         self.__init__(self.height, self.width, self.x, self.y)
                     else:
                         self.id = arg
-                elif l == 1:
+                elif arg_ind == 1:
                     self.width = arg
-                elif l == 2:
+                elif arg_ind == 2:
                     self.height = arg
-                elif l == 3:
+                elif arg_ind == 3:
                     self.x = arg
-                elif l == 4:
+                elif arg_ind == 4:
                     self.y = arg
-                l = l + 1
+                arg_ind = arg_ind + 1
 
         elif kwargs and len(kwargs) != 0:
-            for key, value kwargs.items():
+            for key, value in kwargs.items():
                 if key == "id":
                     if value is None:
                         self.__init__(self.width, self.height, self.x, self.y)

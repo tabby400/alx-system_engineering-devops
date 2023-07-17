@@ -45,13 +45,13 @@ class Square(Rectangle):
                         self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = arg
-                elif l == 1:
+                elif arg_ind == 1:
                     self.size = arg
-                elif l == 2:
+                elif arg_ind == 2:
                     self.x = arg
-                elif l == 3:
+                elif arg_ind == 3:
                     self.y = arg
-                l = l + 1
+                arg_ind = arg_ind + 1
 
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():

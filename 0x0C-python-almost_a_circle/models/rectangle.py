@@ -74,7 +74,7 @@ class Rectangle(Base):
         """retrieving the x coordinate."""
         return self.__x
 
-    @y.setter
+    @x.setter
     def x(self, value):
         if type(value) != int:  # if not an int
             raise TypeError("y must be an integer")

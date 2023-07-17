@@ -38,20 +38,20 @@ class Square(Rectangle):
             **kwargs (dict): New key/value pairs of attributes.
         """
         if args and len(args) != 0:
-            q = 0
+            args_ind = 0
             for arg in args:
-                if q == 0:
+                if args_ind == 0:
                     if arg is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = arg
-                elif arg_ind == 1:
+                elif args_ind == 1:
                     self.size = arg
-                elif arg_ind == 2:
+                elif args_ind == 2:
                     self.x = arg
-                elif arg_ind == 3:
+                elif args_ind == 3:
                     self.y = arg
-                arg_ind = arg_ind + 1
+                args_ind = args_ind + 1
 
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():

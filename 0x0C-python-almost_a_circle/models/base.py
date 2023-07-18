@@ -145,8 +145,8 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     attnames = ["id", "width", "height", "x", "y"]
                 else:
-                    attnamess = ["id", "size", "x", "y"]
-                    list_dictionary = csv.DictReader(csvf, attnames=fieldnames)
+                    attnames = ["id", "size", "x", "y"]
+                    list_dictionary = csv.DictReader(csvf, fieldnames=attnames)
                     list_dictionary = [
                             dict([k, int(val)] for k, val in d.items())
                             for d in list_dictionary

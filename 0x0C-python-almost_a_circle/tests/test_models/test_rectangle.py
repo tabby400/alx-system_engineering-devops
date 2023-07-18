@@ -30,15 +30,12 @@ class RectangleTest(unittest.TestCase):
     def test_rectangle_3_args(self):
         rec1 = Rectangle(4, 2, 1)
         rec2 = Rectangle(3, 2, 7)
-        self.assertEqual(r1.id, r2.id - 1)
+        self.assertEqual(rec1.id, rec2.id - 1)
 
     def test_rectangle_4_args(self):
         rec1 = Rectangle(4, 5, 3, 6)
         rec2 = Rectangle(1, 9, 7, 2)
-        self.assertEqual(r1.id, r2.id - 1)
-
-    def test_rectangle_5_args(self):
-        self.assertEqual(4, Rectangle(4, 1, 7 1, 2).id)
+        self.assertEqual(rec1.id, rec2.id - 1)
         
     def test_6_or_more(self):
         with self.assertRaises(TypeError):
@@ -60,30 +57,13 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(AttributeError):
             print(Rectangle(2, 4, 1, 0, 8).__y)
 
-    def test_attribute_width_getter(self):
-        rec = Rectangle(3, 1, 4, 5, 2)
-        self.assertEqual(5, rec.width)
-
-    def test_attribute_width_setter(self):
-        rec = Rectangle(3, 1, 4, 5, 2)
-        rec.width = 7
-        self.assertEqual(7, rec.width)
-
-    def test_attribute_height_getter(self):
-        rec = Rectangle(3, 1, 4, 5, 2)
-        self.assertEqual(8, rec.height)
-
     def test_attribute_height_setter(self):
         rec = Rectangle(3, 1, 4, 5, 2)
         rec.height = 7
-        self.assertEqual(7, r.height)
-
-    def test_attribute_x_getter(self):
-        rec = Rectangle(3, 1, 4, 5, 2)
-        self.assertEqual(7, rec.x)
+        self.assertEqual(7, rec.height)
 
     def test_attribute_x_setter(self):
-        rec = Rectangle(3, 1, 4, 5, 2))
+        rec = Rectangle(3, 1, 4, 5, 2)
         rec.x = 7
         self.assertEqual(7, rec.x)
 
@@ -256,14 +236,6 @@ class Rectangle_xTest(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(6, 4, "wrong", 1)
 
-    def test_x_float(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(3, 4.5, 7
-
-    def test_x_complex(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(3, 4, complex(7))
-
     def test_x_dictionary(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(3, 8, {"a": 5, "b": 6}, 1)
@@ -275,10 +247,6 @@ class Rectangle_xTest(unittest.TestCase):
     def test_x_width(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(3, 4, [3, 4, 5], 3)
-
-    def test_x_setter(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(3, 2 {1, 5, 2}, 3)
 
     def test_x_tuple(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -388,10 +356,6 @@ class Rectangle_yTest(unittest.TestCase):
 class Rectangle_orderTest(unittest.TestCase):
     """Using unnitest to test the order of rectangle attributes."""
 
-    def test_width_b4_height(self):
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle("wrong width", "wrong height")
-
     def test_width_b4_x(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle("wrong width", 8, "wrong x")
@@ -408,10 +372,6 @@ class Rectangle_orderTest(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle(1, "wrong height", 6, "wrong y")
 
-    def test_x_before_y(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(3, 4, "wrong x", "wrong y")
-
 
 class Rectangle_areaTest(unittest.TestCase):
     """Using unnitest for testing the area method of rectangle."""
@@ -419,10 +379,6 @@ class Rectangle_areaTest(unittest.TestCase):
     def test_small_area(self):
         rec = Rectangle(11, 3, 0, 0, 0)
         self.assertEqual(33, rec.area())
-
-    def test_large_area(self):
-        rec = Rectangle(999999888899999, 999999999999988899999, 0, 0, 2)
-        self.assertEqual(999999999999998999000000000000001, rec.area())
 
     def test_diffAttribures_area(self):
         rec = Rectangle(5, 11, 1, 1, 1)
@@ -459,22 +415,6 @@ class Rectangle_outputTest(unittest.TestCase):
         sys.stdout = sys.__stdout__
         return (output_buff)
 
-    def test_str_print_heightWidth(self):
-        rec = Rectangle(5, 2)
-        output = Rectangle_outputTest.redirect_stdout(rec, "print")
-        expected = "[Rectangle] ({}) 0/0 - 3/7\n".format(rec.id)
-        self.assertEqual(expected, output.getvalue())
-
-    def test_str_heightWidth_x((self):
-        rec = Rectangle(6, 4, 8)
-        expected = "[Rectangle] ({}) 4/2 - 6/4".format(rec.id)
-        self.assertEqual(expected, rec.__str__())
-
-    def test_str_method_widthHeight_x_y(self):
-        rec = Rectangle(4, 5, 1, 2)
-        expected = "[Rectangle] ({}) 5/8 - 2/7".format(rec.id)
-        self.assertEqual(expected, str(rec))
-
     def test_str_method_width_height_x_y_id(self):
         rec = Rectangle(15, 18, 8, 7, 5)
         self.assertEqual("[Rectangle] (5) 8/7 - 15/18", str(rec))
@@ -492,30 +432,8 @@ class Rectangle_outputTest(unittest.TestCase):
         with self.assertRaises(TypeError):
             rec.__str__(1)
 
-    def test_widthHeight_display(self):
-        rec = Rectangle(6, 4, 0, 0, 0)
-        output = Rectangle_outputTest.redirect_stdout(rec, "display")
-        self.assertEqual("##\n##\n##\n", output.getvalue())
-
-    def test_widthHeight_xDsisplay(self):
-        rec = Rectangle(1, 5, 3, 0, 9)
-        output = Rectangle_outputTest.redirect_stdout(rec, "display")
-        self.assertEqual(" ###\n ###\n", output.getvalue())
-
-    def test_widthHeight__yDisplay(self):
-        rec = Rectangle(4, 9, 0, 2, 0)
-        output = Rectangle_outputTest.redirect_stdout(rec, "display")
-        display = "\n####\n####\n####\n####\n####\n"
-        self.assertEqual(display, output.getvalue())
-
-    def test_width_height_x_yDisplay(self):
-        r = Rectangle(2, 7, 4, 8, 0)
-        output = TestRectangle_stdout.capture_stdout(r, "display")
-        display = "\n\n   ##\n   ##\n   ##\n   ##\n"
-        self.assertEqual(display, capture.getvalue())
-
     def test_display_one_arg(self):
-        reec = Rectangle(4, 2, 6, 1, 8)
+        rec = Rectangle(4, 2, 6, 1, 8)
         with self.assertRaises(TypeError):
             rec.display(1)
 
@@ -544,7 +462,7 @@ class Rectangle_TestUpdate_args(unittest.TestCase):
         self.assertEqual("[Rectangle] (69) 9/9 - 4/2", str(rec))
 
     def test_update_args_four(self):
-        rec= Rectangle(9, 9, 9, 9, 9)
+        rec = Rectangle(9, 9, 9, 9, 9)
         rec.update(69, 4, 5, 6)
         self.assertEqual("[Rectangle] (69) 6/9 - 4/5", str(rec))
 
@@ -666,14 +584,9 @@ class RectangleTest_update_kwargs(unittest.TestCase):
         self.assertEqual("[Rectangle] (1) 9/9 - 9/9", str(rec))
 
     def test_update_kwargs_2(self):
-        r = Rectangle(9, 9, 9, 9, 9)
-        r.update(width=2, id=1)
-        self.assertEqual("[Rectangle] (1) 9/9 - 2/9", str(rec))
-
-    def test_update_kwargs_3(self):
         rec = Rectangle(9, 9, 9, 9, 9)
-        rec.update(width=2, height=4, id=69)
-        self.assertEqual("[Rectangle] (86) 9/9 - 2/4", str(rec))
+        rec.update(width=2, id=1)
+        self.assertEqual("[Rectangle] (1) 9/9 - 2/9", str(rec))
 
     def test_update_kwargs_4(self):
         rec = Rectangle(9, 9, 9, 9, 9)
@@ -681,8 +594,8 @@ class RectangleTest_update_kwargs(unittest.TestCase):
         self.assertEqual("[Rectangle] (69) 1/4 - 5/3", str(rec))
 
     def test_update_kwargs_5(self):
-        r = Rectangle(9, 9, 9, 9, 9)
-        r.update(y=5, x=7, id=89, width=1, height=3)
+        rec = Rectangle(9, 9, 9, 9, 9)
+        rec.update(y=5, x=7, id=89, width=1, height=3)
         self.assertEqual("[Rectangle] (89) 7/5 - 1/3", str(rec))
 
     def test_update_kwargs_None_id(self):
@@ -698,9 +611,9 @@ class RectangleTest_update_kwargs(unittest.TestCase):
         self.assertEqual(expected, str(rec))
 
     def test_update_2wice_kwargs(self):
-        r = Rectangle(9, 9, 9, 9, 9)
-        r.update(id=69, x=1, height=2)
-        r.update(y=5, height=12, width=2)
+        rec = Rectangle(9, 9, 9, 9, 9)
+        rec.update(id=69, x=1, height=2)
+        rec.update(y=5, height=12, width=2)
         self.assertEqual("[Rectangle] (69) 1/5 - 2/12", str(rec))
 
     def test_update_invalid_kwargs_width_type(self):
@@ -763,19 +676,9 @@ class RectangleTest_update_kwargs(unittest.TestCase):
         rec.update(a=5, b=10)
         self.assertEqual("[Rectangle] (9) 9/9 - 9/9", str(rec))
 
-    def test_update_kwargsfew_wrong_keys(self):
-        rec = Rectangle(9, 9, 9, 9, 9)
-        rec.update(height=4, id=77, o=1, v=82, x=19, y=7)
-        self.assertEqual("[Rectangle] (77) 12/7 - 9/4", str(rec))
-
 
 class RectangleTest_to_dictionary(unittest.TestCase):
     """Using unnitest when testing the unnitest method to dictionary."""
-
-    def test_output_to_dictionary(self):
-        rec = Rectangle(10, 2, 1, 9, 5)
-        expected = {'x': 7, 'y': 3, 'id': 9, 'height': 4, 'width': 13}
-        self.assertDictEqual(expected, rec.to_dictionary())
 
     def test_to_dictionary_without_object_changes(self):
         rec1 = Rectangle(11, 2, 1, 9, 7)

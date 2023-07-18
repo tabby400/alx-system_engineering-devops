@@ -129,3 +129,28 @@ class Base:
                 csv_writer = csv.DictWriter(csvf, fieldnames=attnames)
                 for obj in list_objs:
                     csv_writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """function used in returning a class list fro the
+        csv file
+
+        Returns:
+            an empty list if file does not exist, otherwise;
+            a list with classes instanced
+        """
+        filenm = cls.__name__ + ".csv"  # the name
+        try:
+            with open(filenm, "r", newline="") as csvf:
+                if cls.__name__ == "Rectangle":
+                    attnames = ["id", "width", "height", "x", "y"]
+                else:
+                    attnamess = ["id", "size", "x", "y"]
+                    list_dictionary = csv.DictReader(csvf, attnames=fieldnames)
+                    list_dictionary = [
+                            dict([k, int(val)] for k, val in d.items())
+                            for d in list_dictionary
+                    ]
+                return [cls.create(**d) for d in list_dictionary]
+        except IOError:
+            return []

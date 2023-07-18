@@ -146,8 +146,8 @@ class Base:
                     attnames = ["id", "width", "height", "x", "y"]
                 else:
                     attnames = ["id", "size", "x", "y"]
-                    list_dictionary = csv.DictReader(csvf, fieldnames=attnames)
-                    list_dictionary = [
+                list_dictionary = csv.DictReader(csvf, fieldnames=attnames)
+                list_dictionary = [
                             dict([k, int(val)] for k, val in d.items())
                             for d in list_dictionary
                     ]

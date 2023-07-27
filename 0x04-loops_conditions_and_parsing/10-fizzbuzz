@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# bash script which displays the numbers 1 to 100
+# and if they are multiples of 3, 5 or both
+
+
+for ((count = 1 ; count <= 100 ; count++)); do
+    if ((count % 3 == 0)) && ((count % 5 == 0)); then
+        echo "FizzBuzz"
+    elif ((count % 5 == 0)); then
+        echo "Buzz"
+    elif ((count % 3 == 0)); then
+        echo "Fizz"
+    else
+        echo "$count"
+    fi # end of if block
+done

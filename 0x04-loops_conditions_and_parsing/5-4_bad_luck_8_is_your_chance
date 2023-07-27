@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# bash script dispalys best school on 10 iterartions
+#except bad luck on  4th and good luck on 8th
+
+counter=1
+
+while [ $counter -le 10 ]
+do
+    if [ $counter -eq 4 ]
+    then
+        echo "bad luck" #4th one
+    elif [ $counter -eq 8 ]
+    then
+        echo "good luck" #8th one
+    else
+        echo "Best School"
+    fi # ends if block
+    counter=$(( counter + 1 ))
+done

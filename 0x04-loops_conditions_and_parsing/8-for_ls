@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# bash script that displays current directory content
+# in a list format after first dash is removed
+
+
+directorylist=$(ls)
+
+for file in $directorylist
+do
+    find "$file" | cut -d- -f2 # 2nd field after split
+done

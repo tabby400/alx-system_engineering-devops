@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# a bash script that that shows the visitor IP and
+# is a bash script that that shows the visitor IP and
 #HTTP status code from the Apache in log file
 
 

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Bash (init) script 101-manage_my_process that manages manage_my_process
+
+
+
+action="$1"
+
+if [ -z "$action" ] #z checks if var exists
+then
+	echo "Usage: manage_my_process {start|stop|restart}"
+	exit
+fi
+
+if [ "$action" == "start" ]
+then
+
+	bash ./manage_my_process &
+	echo "$!" > /var/run/my_process.pid
+	echo "manage_my_process started"
+
+elif [ "$action" == "stop" ]
+then
+	[ -e "/var/run/my_process.pid" ] && pkill -f './manage_my_process' && rm /var/run/my_process.pid
+	echo "manage_my_process stopped"
+
+elif [ "$action" == "restart" ]
+then
+
+	"$0" stop >& /dev/null
+	"$0" start >& /dev/null
+	echo "manage_my_process restarted"
+else
+	echo "Usage: manage_my_process {start|stop|restart}"
+fi

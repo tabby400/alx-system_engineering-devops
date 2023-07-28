@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#a bash script that terminates the infinity process without
+#using kill or killall
+
+pkill -f 4-to_infinity_and_beyond
+# pkill signals and terminates processes based on their names
+# and attributes by sending SIGTERM

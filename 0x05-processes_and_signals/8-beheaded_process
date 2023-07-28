@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#a bash script used to kill the 7-highlander
+#process started in terminal 0 and ended in
+#in terminal 1
+
+
+
+pkill -f -SIGKILL 7-highlander
+
+#pkill sends signals to processes with -f it performs
+#a full command line search, SIGKILL is sent to matching
+#processes and forcibily terminates the process

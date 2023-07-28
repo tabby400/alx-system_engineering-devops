@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# an infinity bash script that is to be stopped using
+# kill
+
+
+
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
+
+#$ used to get pgrep cmd output
+#-f used to match pattern in full cmd line used to start
+#each process

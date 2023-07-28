@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#a script that displays  to infinity and beyond
+#immediately with a sleep 2 between iterations
+#I am invincible!!! when it receives a SIGTERM signal
+
+
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap 'echo "I am invincible!!!"' SIGTERM
+done
+
+#trap acts as a signal handler for the SIGTERM signal
+#and prints the  Iam INvincible when script receives SIGTERM

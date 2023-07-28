@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a bash script that shows to infinity and beyond
+# in between every iteration add sleep 2
+
+
+
+while true # used to create an infinite loop in shell scripts
+do
+    echo "To infinity and beyond"
+    sleep 2 #pauses for two seconds
+done

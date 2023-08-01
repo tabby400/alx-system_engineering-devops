@@ -5,6 +5,7 @@
 # /w matches any word char
 
 
+
 def get_data(text_in)
 
   the_matches = text_in.scan(/\[from:(\+?\w+)\] \[to:(\+?\w+)\] \[flags:(-?\d:-?\d:-?\d:-?\d:-?\d)\]/)
@@ -16,6 +17,6 @@ if ARGV.empty?
   puts "provide the input text."
 else
   text_in = ARGV[0]
-  output = data_got(text_in)
+  output = get_data(text_in)
   puts output
 end

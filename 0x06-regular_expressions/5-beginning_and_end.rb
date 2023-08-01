@@ -1,4 +1,4 @@
-#!/usr/bin//env ruby
+#!/usr/bin/env ruby
 # This prints str starting with h and ends with n and can
 # have any single char in between
 # ^ the char to start and $ the char to end with

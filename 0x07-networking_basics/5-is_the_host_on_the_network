@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This is a bash script that is able to ping
+@ an IP address passed as an argument
+# ICMP uses ping to make sure a network device remains online
+# -c is used to specify the number of ping command packets sent
+
+
+
+if [ "$1" ] # the first pos parameter passed
+then
+	ping -c 5 "$1"  # send 5 ping packets to IP address
+else
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+fi

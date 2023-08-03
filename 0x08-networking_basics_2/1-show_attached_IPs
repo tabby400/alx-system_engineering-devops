@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This bash script is able to  display all active 
+# IPv4 IPs on the machine it’s executed on.
+# the awk awk command is used to process the output of the ss -tln
+
+
+ss -tln | awk 'NR>1{split($4, a, ":"); print a[1]}'

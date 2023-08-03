@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This is a bash script that listens to port 98 on localhost
+# for incoming network connections, uses nc (netcat) which is a utility
+# used to read and write data acrosee network connections
+# -l informs netcat to listen to incoming connections
+
+
+
+nc -l localhost 98 

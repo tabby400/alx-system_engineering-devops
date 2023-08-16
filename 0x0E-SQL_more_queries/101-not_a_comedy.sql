@@ -17,5 +17,5 @@ SELECT DISTINCT `title`
 
 		     INNER JOIN `tv_genres` AS genre
 		     ON genre.`id` = show_genre.`genre_id`
-		     WHERE genre.`name` = "Comedy"
+		     WHERE genre.`name` = "Comedy")
 ORDER BY `title`;

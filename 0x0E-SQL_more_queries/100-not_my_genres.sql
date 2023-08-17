@@ -1,6 +1,5 @@
 -- script lists all genres of database hbtn_0d_tvshows that
 -- are not linked to Dexter show sorted in ascending
-
 SELECT DISTINCT `name`
   FROM `tv_genres` AS g
        INNER JOIN `tv_show_genres` AS s

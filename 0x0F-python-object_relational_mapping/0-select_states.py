@@ -16,9 +16,9 @@ if __name__ == '__main__':
 
     query = "SELECT * FROM states ORDER BY id ASC"  # ascending
 
-    cursor.execute(query)  # executed directly
+    mycursor.execute(query)  # executed directly
 
-    states = cursor.fetchall()  # all rows displayed
+    states = mycursor.fetchall()  # all rows displayed
 
     for state in states:
         print(state)

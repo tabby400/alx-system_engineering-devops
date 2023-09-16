@@ -1,0 +1,4 @@
+#### OBJECT RELATIONAL MAPPING IN PYTHON
+This involves the linkage of the databases with python. In the first part of this project we are to use a module called MySQLdb to interact with the MySQL database by writing SQL queries to manipulate and retrieve data. The second part we are to use SQLAlchemy,which is an Object-Relational Mapper (ORM).Instead of writing SQL queries,one works with python objects that represent the data in the database.In SQLAlchemy there is no need to worry about how the data is stored or write SQL queries.Focus on what you can do with your Python objects, and SQLAlchemy will handle the behind-the-scenes work of translating your Python code into SQL queries.
+One big advantage of using an ORM like SQLAlchemy is that it makes your code independent of the specific used database system. You can switch to a different database system without having to write your entire project because SQLAlchemy abstracts the database interactions for you.
+

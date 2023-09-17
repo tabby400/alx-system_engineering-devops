@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module is a definition of a state model with
+"""this module is a definition of a state model with
 class definition of a state and instance Base = declarative_base()"""
 
 from sqlalchemy.ext.declarative import declarative_base

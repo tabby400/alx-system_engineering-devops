@@ -11,5 +11,5 @@ server_ip=$2
 username=$3
 sshkey=$4
 
-scp -o "StrictHostKeyChecking=no" -i "$ssh_key" "$file_path" "$username"@"$server_ip":~
+scp -o "StrictHostKeyChecking=no" -i "$sshkey" "$file_path" "$username"@"$server_ip":~
 # host key checking disabled

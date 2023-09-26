@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This rep a bash script transfering file from client to server
+
+if [ "$#" -lt 4 ]; then # if cmd are less than 4
+	echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit 1
+fi
+
+file_path=$1
+server_ip=$2
+username=$3
+sshkey=$4
+
+scp -o "StrictHostKeyChecking=no" -i "$ssh_key" "$file_path" "$username"@"$server_ip":~
+# host key checking disabled

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# making sure apache starts on container
+#return a page with Hello Holberton
+#when querying the root
+
+service apache2 start

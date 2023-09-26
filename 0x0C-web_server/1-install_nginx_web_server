@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# installing NGINX web server listening on port 80
+# whrn querying NGINX it must return page hello world
+
+
+sudo apt-get  update -y
+sudo apt-get install nginx -y
+
+# Configure nginx
+sudo sh -c "echo 'server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html;
+
+        server_name _;
+
+        location / {
+                return 200 \"Hello World!\n\";
+        }
+}' > /etc/nginx/sites-available/default"
+
+# to start NGINX server on linux
+sudo service nginx start

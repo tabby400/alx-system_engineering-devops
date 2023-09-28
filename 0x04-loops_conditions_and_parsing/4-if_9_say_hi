@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# bash script for displaying best school 10 times
+# but adds hi on a new line on 9th time
+
+counter=1
+
+while [ $counter -le 10 ]
+do
+    echo "Best School"
+    if [ $counter -eq 9 ]
+    then
+        echo "Hi" # echo adds new line
+    fi # to end the if statement
+    counter=$(( counter + 1 ))
+done

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is able to display the listening sockets
+# netstat is for showing network stattistics and info
+# -l shows all the listening ports in the system
+# -p displays the PID and name of the process that is using each network connection
+
+
+netstat -lp

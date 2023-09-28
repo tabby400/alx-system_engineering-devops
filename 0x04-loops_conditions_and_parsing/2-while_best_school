@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# a bash script used to dispaly best school 10 times
+# using a while loop
+
+counter=1
+total_rep=10
+
+while [ $counter -le $total_rep ]
+do
+	echo "Best School"
+	((counter++))
+done

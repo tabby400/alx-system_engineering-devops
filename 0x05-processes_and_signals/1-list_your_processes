@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# a bash script that displays the list of currently
+# running processes in hierachy
+
+ps -auxf
+#ps is prosess status, a shows all user processes
+# u has info such as cpu usage, username
+# x shows processes with no controlling terminal TTY
+# f shows a full format output

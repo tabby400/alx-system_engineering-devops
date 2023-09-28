@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# is a bash script that groups the visitors by IP and HTTP
+#status code then shows the data
+
+
+awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
+# uniq -c for number of occurrences of each unique one
+# sort -rn sorts from uniq in descending order

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bash script sisplaying best school ten times using
+# until in a loop
+
+counter=1
+total_rep=11
+
+until [ $counter -ge $total_rep ]
+do
+	echo "Best School"
+	((counter++))
+done

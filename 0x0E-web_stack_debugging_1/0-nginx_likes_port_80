@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#this making sure the ubuntu container listens to port 80
+# we are first disabling the link to default nginx site
+# then we are creating a default symbolic link
+# then restaring nginx with the new config changes
+
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart

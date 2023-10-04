@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# congigure like first one service saying ngnix not running
+service nginx start
+curl 0:80
+service nginx status | grep "nginx is not running" # show this

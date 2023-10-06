@@ -1,0 +1,2 @@
+#### 0x10. HTTPS SSL
+HTTPS is an extension of HTTP (Hypertext Transfer Protocol) that adds a layer of security to the communication between a clienta and a server.Website owners can obtain SSL/TLS certificates from trusted CAs to enable HTTPS on their websites.HTTPS relies on SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols to provide this security. SSL and TLS are cryptographic protocols that establish a secure connection between client and server.

@@ -32,3 +32,15 @@ defaults
         errorfile 502 /etc/haproxy/errors/502.http
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
+
+frontend maggytabby-frontend
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/www.maggytabby.tech.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        mode http
+        default_backend maggytabby-backend
+
+backend maggytabby-backend
+        balance roundrobin
+        server 337188-web-01 18.207.3.198:80 check
+        server 337188-web-02 54.84.150.136:80 check

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# date should be in the right format
+current_date=$(date +'%d-%m-%Y')
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <mysql_password>"
+  exit 1
+fi
+
+mysql_user="root"
+mysql_password="$1"
+
+# a directory is created for the backup
+backup_dir="/tmp/mysql_backup"
+mkdir -p "$backup_dir"
+
+# mysql dump created now
+mysqldump -u "$mysql_user" -p"$mysql_password" --all-databases > "$backup_dir/backup.sql"
+
+# then the mysql dumo is compressed to a tar.gz archive
+tar -czf "$backup_dir/$current_date.tar.gz" -C "$backup_dir" backup.sql
+
+rm -rf "$backup_dir"
+
+echo "MySQL backup completed successfully!"
+echo "Backup file: $backup_dir/$current_date.tar.gz"

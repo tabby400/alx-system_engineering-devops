@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#whoami under the user passed as arg
+
+if [ $# -eq 0 ];
+then
+	sudo whoami
+	exit 1
+fi
+
+sudo -u "$1" whoami

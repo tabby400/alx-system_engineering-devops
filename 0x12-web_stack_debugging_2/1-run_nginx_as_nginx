@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#trying to make the container run as nginx user
+#to make it more secure
+
+chown nginx:nginx /etc/nginx/nginx.conf # owner is nginx user
+chmod 644 /etc/nginx/nginx.conf
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start #nginx started

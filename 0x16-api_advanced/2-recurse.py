@@ -5,7 +5,7 @@ import requests
 list with title of all articles"""
 
 
-def recurse(subreddit, hot_list=None, after=None):
+def recurse(subreddit,  hot_list=[], after="", count=0):
     """function that getsa list of hot titles
     recursively"""
     

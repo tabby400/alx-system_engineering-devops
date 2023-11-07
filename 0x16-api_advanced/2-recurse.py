@@ -15,7 +15,7 @@ def recurse(subreddit, hot_list=None, after=None):
     }
     params = {
         "after": after,
-        "count": 0,
+        "count": count,
         "limit": 100
     }
     response = requests.get(url, headers=headers, params=params,
@@ -30,5 +30,5 @@ def recurse(subreddit, hot_list=None, after=None):
         hot_list.append(h.get("data").get("title"))
 
     if after is not None:
-        return recurse(subreddit, hot_list, outcome, count)
+        return recurse(subreddit, hot_list, after, count)
     return hot_list
